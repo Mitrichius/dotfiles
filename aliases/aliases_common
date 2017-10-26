@@ -1,0 +1,46 @@
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+
+alias ls="ls ${colorflag}"
+alias l="ls -lF"
+alias ll="ls -lahF"
+alias mkdir="mkdir -p"
+alias grep='grep --color=auto '
+alias tailf='tail -f'
+alias cleandir='rm -rf ./*'
+
+alias g="git"
+alias h="history"
+
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ips="sudo ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+alias hosts='sudo vim /etc/hosts'
+alias untar='tar xvf'
+alias ungzip="gunzip -k"
+alias pubkey="cat ~/.ssh/id_rsa.pub"
+alias checkalias="type"
+
+#soft
+alias runmemcached='memcached -d -m 24 -p 11211'
+
+#linux 
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+#mac
+alias open='browser-exec "$@"'
+alias dnsclear='sudo killall -HUP mDNSResponder'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'

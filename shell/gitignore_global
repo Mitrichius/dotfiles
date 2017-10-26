@@ -1,0 +1,24 @@
+# Vim
+.vim/.netrwhist
+.vim/plugged/**
+*.swp
+
+# PhpStorm
+.idea/
+
+# Composer
+vendor/
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+*~
+Thumbs.db
+
+# npm & bower
+bower_components
+node_modules
+npm-debug.log

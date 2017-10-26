@@ -1,0 +1,1 @@
+alias fuck='sudo $(history -p \!\!)'

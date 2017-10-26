@@ -1,0 +1,124 @@
+set nocompatible
+
+filetype plugin indent on  " Load plugins according to detected filetype.
+
+let $PATH = $PATH . ':' . expand("~/.local/bin") . ':' . expand("~/.composer/vendor/bin")
+
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Numbers
+set number
+set numberwidth=5
+
+" Display extra whitespace and tabs as characters, but not by default
+set list
+set listchars=tab:»·,trail:·,nbsp:·
+
+" Use one space, not two, after punctuation.
+set nojoinspaces
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+
+" No backups
+set nobackup
+set nowritebackup
+set noswapfile
+
+" No sound bell
+set visualbell
+
+" Search
+set incsearch		" incremental 
+set hlsearch		" highlight all
+set ignorecase
+set smartcase
+
+" Mouse 
+set mouse=a     	" Enable mouse in all modes
+set ttymouse=xterm2
+
+" Colors
+syntax enable
+set background=dark
+set t_Co=256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termtrans = 1
+colorscheme solarized
+
+" Appearence 
+set ruler			" show the cursor position all the time
+set cursorline		" highlight the current line
+set nofoldenable	" no folding
+
+" Tabs
+set tabstop=4
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+set smarttab
+set autoindent
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" Word wrapping, line breaks inserted when you explicitly press the Enter key
+set wrap
+set linebreak
+set nolist 
+
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Load from bundles
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+augroup vimrcEx
+  autocmd!
+
+ " When editing a file, always jump to the last known cursor position.
+ " Don't do it for commit messages, when the position is invalid, or when
+ " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+ " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+augroup END
+
+" When the type of shell script is /bin/sh, assume a POSIX-compatible
+" shell for syntax highlighting purposes.
+let g:is_posix = 1
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Always use vertical diffs
+set diffopt+=vertical
+
+" Other
+set cmdheight=2
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toc_autofit = 1
+let g:lexical#spelllang = ['en_us', 'ru_ru']
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:easytags_async = 1

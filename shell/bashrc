@@ -1,0 +1,36 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# dircolors
+if [ -e ~/.dircolors ]; then
+  eval `dircolors -b ~/.dircolors`
+fi
+
+# Tab complete sudo commands
+complete -cf sudo
+
+# Fix vim colors inside tmux
+if [ -n $TMUX ]; then
+  alias vim="TERM=screen-256color vim"
+fi
+
+# Put bash in vim mode
+set -o vi
+
+# Set default editor to vim
+export EDITOR=vim
+
+# Aliases
+if [ -f ~/.aliases_common ]; then
+    source ~/.aliases_common
+fi
+
+if [ -f ~/.aliases_bash ]; then
+    source ~/.aliases_bash
+fi
+
+if [ -f ~/.aliases_custom ]; then
+    source ~/.aliases_custom
+fi
