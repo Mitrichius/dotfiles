@@ -5,7 +5,7 @@
     default = tracking
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = /Users/mitrichius/.gitignore_global
 [alias]
     co = checkout
     st = status
@@ -47,3 +47,7 @@
 	required = true
 [commit]
 	template = $HOME/.stCommitMsg
+
+# Use separate file for username / github token / etc
+[include]
+    path = $HOME/.gitconfig.local

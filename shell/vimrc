@@ -30,12 +30,12 @@ set noswapfile
 set visualbell
 
 " Search
-set incsearch		" incremental 
+set incsearch		" incremental
 set hlsearch		" highlight all
 set ignorecase
 set smartcase
 
-" Mouse 
+" Mouse
 set mouse=a     	" Enable mouse in all modes
 set ttymouse=xterm2
 
@@ -43,12 +43,9 @@ set ttymouse=xterm2
 syntax enable
 set background=dark
 set t_Co=256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termtrans = 1
-colorscheme solarized
+colorscheme codedark
 
-" Appearence 
+" Appearence
 set ruler			" show the cursor position all the time
 set cursorline		" highlight the current line
 set nofoldenable	" no folding
@@ -67,7 +64,7 @@ set lazyredraw
 " Word wrapping, line breaks inserted when you explicitly press the Enter key
 set wrap
 set linebreak
-set nolist 
+set nolist
 
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
