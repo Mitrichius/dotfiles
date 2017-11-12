@@ -9,6 +9,6 @@ if [ -z "$CMD" ]; then
 fi
 
 echo "Installing dotfiles"
-mkdir -p "./dotfiles"
-eval "$CMD https://github.com/mitrichius/dotfiles/tarball/master | tar -xzv -C ~/.dotfiles --strip-components=1 --exclude='{.gitignore}'"
-. "./dotfiles/install.sh"
+mkdir -p "$HOME/dotfiles"
+eval "$CMD https://github.com/mitrichius/dotfiles/tarball/master | tar -xzv -C $HOME/dotfiles --strip-components=1 --exclude='{.gitignore}'"
+. "$HOME/dotfiles/install.sh"
