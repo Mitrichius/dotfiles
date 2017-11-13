@@ -36,7 +36,7 @@ set ignorecase
 set smartcase
 
 " Mouse
-set mouse=a     	" Enable mouse in all modes
+set mouse-=a     	
 set ttymouse=xterm2
 
 " Colors

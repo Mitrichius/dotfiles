@@ -22,7 +22,7 @@ export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
 #other
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[ -f /usr/local/opt/nvm/nvm.sh ] && source "/usr/local/opt/nvm/nvm.sh"
 
 # Aliases
 [ -f $HOME/.aliases_common ] && source $HOME/.aliases_common

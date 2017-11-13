@@ -127,7 +127,7 @@ FIlES_ALIASES=aliases/*
 
 # Warn user this script will overwrite current dotfiles
 while true; do
-  read -p "Warning: this will overwrite your current dotfiles. Original backup will be in $HOME/.backup. Continue? [y/n] " yn
+  read -p "Warning: this will overwrite your current dotfiles. Original backup will be in $HOME/.backup/. Continue? [y/n] " yn
   case $yn in
     [Yy]* ) break;;
     [Nn]* ) exit;;
