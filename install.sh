@@ -136,14 +136,15 @@ while true; do
 done
 
 print_info "Backup files"
-mkdir -p $HOME/.backup
+DATETIME=$(date '+%d/%m/%Y %H:%M:%S');
+BACKUP_DIR=$HOME/.backup/$DATETIME
+mkdir -p $BACKUP_DIR
 for file in $FILES_SHELL
 do
 	FILE_NAME=.${file##*/}
 	ORIGINAL_FILE=$HOME/$FILE_NAME
 	if [ -e $ORIGINAL_FILE ]; then 
-		rm -rf $HOME/.backup/$FILE_NAME
-		mv -f $ORIGINAL_FILE $HOME/.backup/$FILE_NAME
+		mv -f $ORIGINAL_FILE $BACKUP_DIR/$FILE_NAME
     if [ $? -eq 0 ]; then
       print_success "$ORIGINAL_FILE backed up"
     else
