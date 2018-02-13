@@ -14,7 +14,7 @@ print_error() {
 
 print_question() {
   # Print output in yellow
-  printf "\e[0;33m  [?] $1\e[0m"
+  printf "\e[0;33m  [?] $1\e[0m" > $OUTPUT
 }
 
 print_result() {
@@ -28,18 +28,22 @@ print_result() {
 
 print_success() {
   # Print output in green
-  printf "\e[0;32m  [✔] $1\e[0m\n"
+  printf "\e[0;32m  [✔] $1\e[0m\n" > $OUTPUT
 }
 
 print_info() {
   # Print output in purple
-  printf "\n\e[0;35m $1\e[0m\n\n"
+  printf "\n\e[0;35m $1\e[0m\n\n" > $OUTPUT
 }
 
 ask_for_confirmation() {
   print_question "$1 (y/n) "
-  read -n 1
-  printf "\n"
+  if [ "$QUIET_MODE" = true ]; then
+    REPLY=y
+  else 
+    read -n 1
+    printf "\n"
+  fi
 }
 
 answer_is_yes() {
@@ -122,22 +126,44 @@ SOURCE_FILE="$DIR/$1"
 	fi
 }
 
-FILES_SHELL=shell/*
-FIlES_ALIASES=aliases/*
+usage() {
+  echo "Usage: $0 [-q]" 1>&2; 
+  exit 1; 
+}
 
-# Warn user this script will overwrite current dotfiles
-while true; do
-  read -p "Warning: this will overwrite your current dotfiles. Original backup will be in $HOME/.backup/. Continue? [y/n] " yn
-  case $yn in
-    [Yy]* ) break;;
-    [Nn]* ) exit;;
-    * ) echo "Please answer yes or no.";;
+QUIET_MODE=false;
+OUTPUT=/dev/stdout
+
+while getopts "q" arg; do
+  case "${arg}" in
+    q)
+      QUIET_MODE=true;
+      OUTPUT=/dev/null
+      ;;
+    *)
+      QUIET_MODE=false;
+      usage
+      ;;
   esac
 done
 
-print_info "Backup files"
-DATETIME=$(date '+%d/%m/%Y %H:%M:%S');
+FILES_SHELL=shell/*
+FIlES_ALIASES=aliases/*
+
+DATETIME=$(date '+%d-%m-%Y_%H:%M:%S');
 BACKUP_DIR=$HOME/.backup/$DATETIME
+
+# Warn user this script will overwrite current dotfiles
+while true; do
+  ask_for_confirmation "Warning: this will overwrite your current dotfiles. Original backup will be in $BACKUP_DIR. Continue?"
+  if answer_is_yes; then
+    break;
+  else
+    exit;
+  fi;
+done
+
+print_info "Backup files"
 mkdir -p $BACKUP_DIR
 for file in $FILES_SHELL
 do
@@ -151,7 +177,6 @@ do
       print_error "Can't backup $ORIGINAL_FILE, exit";
       exit;
     fi 
-
 	fi
 done
 
@@ -177,7 +202,14 @@ print_info "Install vim theme"
 mkdir -p $HOME/.vim
 execute "cp -R $DIR/themes/vim/* $HOME/.vim/" "Vim theme installed"
 
+
+
 # Select shell
+if [ "$QUIET_MODE" = true ]; then
+  bash;
+  exit;
+fi
+
 while true; do
   read -p "bash or zsh? " answer
   case $answer in
