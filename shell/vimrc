@@ -119,3 +119,9 @@ let g:lexical#spelllang = ['en_us', 'ru_ru']
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:easytags_async = 1
+
+
+" Local settings
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
