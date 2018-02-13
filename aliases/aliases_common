@@ -78,7 +78,7 @@ fi
 genpass() {
     local p=$1
         [ "$p" == "" ] && p=18
-            tr -dc A-Za-z0-9 < /dev/urandom | head -c ${p} | xargs
+            LC_CTYPE=C tr -dc A-Za-z0-9 < /dev/urandom | head -c ${p} | xargs
 }
 
 #soft
