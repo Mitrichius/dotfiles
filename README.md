@@ -17,6 +17,9 @@ This is a collection of dotfiles and scripts I use for customizing working envir
  
 ## Installation
 
+### Options
+- q: for quiet install (bash mode)
+
 ### Requirements
 - Curl for oh-my-zsh installation
 - Git for zsh plugins installation
@@ -31,12 +34,12 @@ $ ./install.sh
 
 ### Via curl
 ```sh
-sh -c "`curl -fsSL https://raw.github.com/mitrichius/dotfiles/master/remote-install.sh`"
+bash -c "`curl -fsSL https://raw.github.com/mitrichius/dotfiles/master/remote-install.sh`"
 ```
 
 ### Via wget
 ```sh
-sh -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/mitrichius/dotfiles/master/remote-install.sh`"
+bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/mitrichius/dotfiles/master/remote-install.sh`"
 ```
 
 ## Customize
