@@ -1,8 +1,8 @@
 # Fix vim colors inside tmux
 [ -n $TMUX ] && alias vim="TERM=screen-256color vim"
 
-# Put bash in vim mode
-set -o vi
+# Put bash in emacs mode
+set -o emacs
 
 # Set default editor to vim
 export EDITOR=vim
