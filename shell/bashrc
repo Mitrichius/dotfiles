@@ -13,7 +13,7 @@ export EDITOR=vim
 # Aliases
 [ -f $HOME/.aliases_common ] && source $HOME/.aliases_common
 [ -f $HOME/.aliases_zsh ] && source $HOME/.aliases_zsh
-[ -f $HOME/.aliases_local ] && source $HOME/.aliases_custom
+[ -f $HOME/.aliases_local ] && source $HOME/.aliases_local
 
 # Source local extra (private) settings specific to machine if it exists
 [ -f $HOME/.bashrc.local ] && source $HOME/.bashrc.local
