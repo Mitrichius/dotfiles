@@ -7,10 +7,6 @@ let $PATH = $PATH . ':' . expand("~/.local/bin") . ':' . expand("~/.composer/ven
 " Sets how many lines of history VIM has to remember
 set history=500
 
-" Numbers
-set number
-set numberwidth=5
-
 " Display extra whitespace and tabs as characters, but not by default
 set list
 set listchars=tab:»·,trail:·,nbsp:·
