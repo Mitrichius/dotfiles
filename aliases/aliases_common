@@ -37,6 +37,8 @@ alias ungzip="gunzip -k"
 alias pubkey="cat ~/.ssh/id_rsa.pub"
 alias checkalias="type"
 alias srvlist="grep -w -i "Host" ~/.ssh/config | sed 's/Host//'"
+alias nextminute="sleep $(( 60 - 10#$(date +%S) )); date '+%H:%M:%S'"
+alias showtime="while true; do date '+%H:%M:%S'; sleep 1; done"
 
 function extract {
  if [ -z "$1" ]; then
