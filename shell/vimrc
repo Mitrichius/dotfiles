@@ -52,7 +52,6 @@ set softtabstop=4
 set expandtab
 set shiftwidth=4
 set smarttab
-set autoindent
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
