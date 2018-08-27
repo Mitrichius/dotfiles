@@ -19,9 +19,7 @@ alias tailf='tail -f'
 alias cleandir='rm -rf ./*'
 alias su='sudo su'
 alias top='htop'
-alias df="df -Tha --total"
-alias ps="ps aux"
-
+alias df="df -ha"
 alias g="git"
 alias h="history"
 
