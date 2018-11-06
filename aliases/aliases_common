@@ -96,3 +96,4 @@ alias open='browser-exec "$@"'
 alias dnsclear='sudo killall -HUP mDNSResponder'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias finder='\open'
+alias notifyme="osascript -e 'display notification \"Check Terminal\" with title \"Command finished\"'"
