@@ -37,6 +37,7 @@ alias checkalias="type"
 alias srvlist="grep -w -i "Host" ~/.ssh/config | sed 's/Host//'"
 alias nextminute="sleep $(( 60 - 10#$(date +%S) )); date '+%H:%M:%S'"
 alias showtime="while true; do date '+%H:%M:%S'; sleep 1; done"
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'"
 
 function extract {
  if [ -z "$1" ]; then
