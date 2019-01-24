@@ -206,7 +206,6 @@ execute "cp -R $DIR/themes/vim/* $HOME/.vim/" "Vim theme installed"
 
 # Select shell
 if [ "$QUIET_MODE" = true ]; then
-  bash;
   exit;
 fi
 
