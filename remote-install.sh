@@ -8,7 +8,9 @@ if [ -z "$CMD" ]; then
   exit
 fi
 
+ARGS=$@
+
 echo "Downloading dotfiles"
 mkdir -p "$HOME/dotfiles"
 eval "$CMD https://github.com/mitrichius/dotfiles/tarball/master | tar -xzv -C $HOME/dotfiles --strip-components=1 --exclude='{.gitignore}'"
-cd $HOME/dotfiles/ && ./install.sh && cd -
+cd $HOME/dotfiles/ && ./install.sh ${ARGS} && cd -
