@@ -32,7 +32,7 @@ set ignorecase
 set smartcase
 
 " Mouse
-set mouse-=a     	
+set mouse+=a
 set ttymouse=xterm2
 
 " Colors
@@ -52,7 +52,6 @@ set softtabstop=4
 set expandtab
 set shiftwidth=4
 set smarttab
-set autoindent
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -103,9 +102,6 @@ let g:html_indent_tags = 'li\|p'
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-" Always use vertical diffs
-set diffopt+=vertical
 
 " Other
 set cmdheight=2
