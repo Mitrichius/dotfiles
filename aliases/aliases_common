@@ -19,9 +19,7 @@ alias tailf='tail -f'
 alias cleandir='rm -rf ./*'
 alias su='sudo su'
 alias top='htop'
-alias df="df -Tha --total"
-alias ps="ps aux"
-
+alias df="df -ha"
 alias g="git"
 alias h="history"
 
@@ -37,6 +35,9 @@ alias ungzip="gunzip -k"
 alias pubkey="cat ~/.ssh/id_rsa.pub"
 alias checkalias="type"
 alias srvlist="grep -w -i "Host" ~/.ssh/config | sed 's/Host//'"
+alias nextminute="sleep $(( 60 - 10#$(date +%S) )); date '+%H:%M:%S'"
+alias showtime="while true; do date '+%H:%M:%S'; sleep 1; done"
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'"
 
 function extract {
  if [ -z "$1" ]; then
@@ -95,3 +96,5 @@ alias pbpaste='xclip -selection clipboard -o'
 alias open='browser-exec "$@"'
 alias dnsclear='sudo killall -HUP mDNSResponder'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias finder='\open'
+alias notifyme="osascript -e 'display notification \"Check Terminal\" with title \"Command finished\"'"
