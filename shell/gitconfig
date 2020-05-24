@@ -45,8 +45,6 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[commit]
-	template = $HOME/.stCommitMsg
 
 # Use separate file for username / github token / etc
 [include]

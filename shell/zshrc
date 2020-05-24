@@ -13,8 +13,8 @@ ZSH_THEME="mitrichius"
 HYPHEN_INSENSITIVE="true"
 
 # Plugins
-plugins=(zsh-autosuggestions redis-cli sudo zsh-syntax-highlighting)
-source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+plugins=(zsh-autosuggestions)
 
 # User configuration
 export EDITOR='vim'
