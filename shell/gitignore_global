@@ -1,13 +1,16 @@
-# Vim
+# Editors
 .vim/.netrwhist
 .vim/plugged/**
 *.swp
-
-# PhpStorm
 .idea/
+.vscode/
 
-# Composer
+# Deps and other
 vendor/
+__pycache__
+bower_components
+node_modules
+npm-debug.log
 
 # Folder view configuration files
 .DS_Store
@@ -17,8 +20,3 @@ Desktop.ini
 ._*
 *~
 Thumbs.db
-
-# npm & bower
-bower_components
-node_modules
-npm-debug.log
