@@ -20,6 +20,17 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
+# History
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_no_store
+setopt hist_reduce_blanks
+setopt inc_append_history
+setopt extended_history
+setopt hist_ignore_space
+
 #other
 export NVM_DIR="$HOME/.nvm"
 [ -f /usr/local/opt/nvm/nvm.sh ] && source "/usr/local/opt/nvm/nvm.sh"
