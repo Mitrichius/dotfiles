@@ -94,6 +94,9 @@ defaults write com.apple.dock show-process-indicators -bool false
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Search in current directory by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
 
 for app in "Calendar" "Contacts" "cfprefsd" "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" "Terminal"; do
            kill all "${app}" > /dev/null 2>&1
