@@ -12,5 +12,5 @@ ARGS=$@
 
 echo "Downloading dotfiles"
 mkdir -p "$HOME/dotfiles"
-eval "$CMD https://github.com/mitrichius/dotfiles/tarball/master | tar -xzv -C $HOME/dotfiles --strip-components=1 --exclude='{.gitignore}'"
+eval "$CMD https://github.com/mitrichius/dotfiles/tarball/main | tar -xzv -C $HOME/dotfiles --strip-components=1 --exclude='{.gitignore}'"
 cd $HOME/dotfiles/ && ./install.sh ${ARGS} && cd -
