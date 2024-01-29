@@ -58,3 +58,5 @@
     newHighlight = green bold 22
 [branch]
     sort = -committerdate
+[rerere]
+    enabled = true
