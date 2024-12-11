@@ -6,7 +6,7 @@ HYPHEN_INSENSITIVE="true"
 
 # Plugins
 ZSH_AUTOSUGGEST_USE_ASYNC=true
-plugins=(zsh-autosuggestions per-directory-history)
+plugins=(zsh-autosuggestions)
 
 # Export PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
