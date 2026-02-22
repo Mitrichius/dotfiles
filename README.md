@@ -1,5 +1,4 @@
-# Dmitry Kolosov's dotfiles [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/mitrichius/1)
-
+# Dmitry Kolosov's dotfiles [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 This is a collection of dotfiles and scripts I use for customizing working environment on OS X and Linux.
 
 ![iterm2 screenshot](./screenshot.png)
